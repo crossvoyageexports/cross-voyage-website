@@ -1,14 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Leadership from "@/components/Leadership";
 import Products from "@/components/Products";
 import WhyChoose from "@/components/WhyChoose";
 import Certifications from "@/components/Certifications";
 import GlobalPresence from "@/components/GlobalPresence";
 import ExportProcess from "@/components/ExportProcess";
+import GetQuote from "@/components/GetQuote";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -20,6 +20,8 @@ export default function Home() {
 
       <About />
 
+      <Leadership />
+
       <Products />
 
       <WhyChoose />
@@ -30,11 +32,9 @@ export default function Home() {
 
       <ExportProcess />
 
+      <GetQuote />
+
       <Contact />
-
-      <Footer />
-
-      <WhatsAppButton />
 
     </main>
   );
