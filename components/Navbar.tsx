@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -13,6 +13,42 @@ const navLinks = [
   { name: "Get Quote", href: "#quote" },
   { name: "Contact", href: "#contact" },
 ];
+
+
+function InstagramIcon() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect
+        width="20"
+        height="20"
+        x="2"
+        y="2"
+        rx="5"
+        ry="5"
+      />
+
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+
+      <line
+        x1="17.5"
+        x2="17.51"
+        y1="6.5"
+        y2="6.5"
+      />
+    </svg>
+  );
+}
+
+
 
 export default function Navbar() {
 
@@ -78,9 +114,7 @@ export default function Navbar() {
               href={item.href}
               className="font-medium text-gray-700 hover:text-blue-900 transition"
             >
-
               {item.name}
-
             </a>
 
           ))}
@@ -93,11 +127,11 @@ export default function Navbar() {
             href="https://www.instagram.com/cross_voyage_exports/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
             className="text-gray-700 hover:text-pink-600 transition"
+            aria-label="Instagram"
           >
 
-            <Instagram size={24} />
+            <InstagramIcon />
 
           </a>
 
@@ -107,11 +141,10 @@ export default function Navbar() {
 
 
 
-
         {/* Mobile Menu Button */}
 
         <button
-          className="lg:hidden text-gray-800"
+          className="lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -131,14 +164,14 @@ export default function Navbar() {
 
 
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
 
       {menuOpen && (
 
         <div className="lg:hidden bg-white border-t shadow-lg">
 
 
-          <nav className="flex flex-col px-6 py-6 gap-5">
+          <nav className="flex flex-col gap-5 px-6 py-6">
 
 
             {navLinks.map((item) => (
@@ -149,16 +182,12 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="text-gray-700 font-medium hover:text-blue-900 transition"
               >
-
                 {item.name}
-
               </a>
 
             ))}
 
 
-
-            {/* Instagram Mobile */}
 
             <a
               href="https://www.instagram.com/cross_voyage_exports/"
@@ -168,7 +197,7 @@ export default function Navbar() {
               className="flex items-center gap-2 text-gray-700 font-medium hover:text-pink-600 transition"
             >
 
-              <Instagram size={20} />
+              <InstagramIcon />
 
               Instagram
 
