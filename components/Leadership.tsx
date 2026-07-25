@@ -12,7 +12,7 @@ const leaders = [
       "Driving the vision of Cross Voyage Exports Private Limited by building trusted global partnerships and connecting quality Indian products with international markets.",
   },
   {
-    name: "Vamsi",
+    name: "Vamsi T",
     role: "Director",
     image: "/vamsi.jpeg",
     description:
