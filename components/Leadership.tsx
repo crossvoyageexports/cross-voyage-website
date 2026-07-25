@@ -8,7 +8,6 @@ const leaders = [
     name: "Abhinav Bhumireddy",
     role: "Director",
     image: "/Abhinav.jpeg",
-    position: "object-[center_100%]",
     description:
       "Driving the vision of Cross Voyage Exports Private Limited by building trusted global partnerships and connecting quality Indian products with international markets.",
   },
@@ -16,7 +15,6 @@ const leaders = [
     name: "Vamsi",
     role: "Director",
     image: "/vamsi.jpeg",
-    position: "object-[center_0%]",
     description:
       "Supporting business operations, strategic growth, and ensuring smooth coordination across sourcing, exports, and customer relationships.",
   },
@@ -31,7 +29,6 @@ export default function Leadership() {
 
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +52,8 @@ export default function Leadership() {
         </motion.div>
 
 
-        {/* Leadership Cards */}
         <div className="grid md:grid-cols-2 gap-8 mt-12">
+
 
           {leaders.map((leader, index) => (
 
@@ -69,21 +66,22 @@ export default function Leadership() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 max-w-md mx-auto w-full"
             >
 
-              {/* Image */}
-              <div className="relative h-[360px] w-full bg-gray-100">
+
+              {/* Full Image Without Crop */}
+              <div className="relative w-full h-[420px] bg-gray-100">
 
                 <Image
                   src={leader.image}
                   alt={leader.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
-                  className={`object-cover ${leader.position}`}
+                  className="object-contain p-4"
                 />
 
               </div>
 
 
-              {/* Details */}
+
               <div className="p-6 text-center">
 
                 <h3 className="text-2xl font-bold text-slate-900">
@@ -94,15 +92,18 @@ export default function Leadership() {
                   {leader.role}
                 </p>
 
+
                 <p className="mt-4 text-gray-600 leading-7 text-sm">
                   {leader.description}
                 </p>
 
               </div>
 
+
             </motion.div>
 
           ))}
+
 
         </div>
 
