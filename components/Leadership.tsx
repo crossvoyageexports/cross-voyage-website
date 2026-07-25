@@ -8,7 +8,7 @@ const leaders = [
     name: "Abhinav Bhumireddy",
     role: "Director",
     image: "/Abhinav.jpeg",
-    position: "object-[center_25%]",
+    position: "object-[center_60%]",
     description:
       "Driving the vision of Cross Voyage Exports Private Limited by building trusted global partnerships and connecting quality Indian products with international markets.",
   },
@@ -61,11 +61,11 @@ export default function Leadership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100"
             >
 
-              {/* Image */}
-              <div className="relative h-[500px] bg-gray-100">
+              {/* Leadership Image */}
+              <div className="relative aspect-[4/5] bg-gray-100">
 
                 <Image
                   src={leader.image}
@@ -78,7 +78,7 @@ export default function Leadership() {
               </div>
 
 
-              {/* Content */}
+              {/* Details */}
               <div className="p-8 text-center">
 
                 <h3 className="text-3xl font-bold text-slate-900">
@@ -88,6 +88,7 @@ export default function Leadership() {
                 <p className="text-blue-700 font-semibold mt-2">
                   {leader.role}
                 </p>
+
 
                 <p className="mt-5 text-gray-600 leading-8">
                   {leader.description}
