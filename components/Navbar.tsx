@@ -15,25 +15,39 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
+
+  const handleNavigation = () => {
+    setMenuOpen(false);
+  };
+
+
   return (
+
     <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-md">
+
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
 
-          <div className="relative w-[60px] h-[60px]">
+        <a
+          href="#"
+          className="flex items-center gap-3"
+          onClick={() => setMenuOpen(false)}
+        >
+
+          <div className="relative w-[55px] h-[55px]">
 
             <Image
               src="/logo.jpeg"
               alt="Cross Voyage Exports"
               fill
               priority
-              sizes="60px"
+              sizes="55px"
               className="rounded-full object-cover"
             />
 
@@ -52,12 +66,16 @@ export default function Navbar() {
 
           </div>
 
+
         </a>
 
 
 
+
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+
+        <nav className="hidden lg:flex items-center gap-7">
+
 
           {navLinks.map((item) => (
 
@@ -76,13 +94,22 @@ export default function Navbar() {
 
 
 
-        {/* Mobile Button */}
+
+
+        {/* Mobile Menu Button */}
+
         <button
-          className="lg:hidden"
+          className="lg:hidden text-gray-800"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
+          aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+
+          {menuOpen ? (
+            <X size={30} />
+          ) : (
+            <Menu size={30} />
+          )}
+
         </button>
 
 
@@ -90,34 +117,43 @@ export default function Navbar() {
 
 
 
-      {/* Mobile Menu */}
+
+
+      {/* Mobile Navigation */}
 
       {menuOpen && (
 
-        <div className="lg:hidden bg-white border-t">
+        <div className="lg:hidden bg-white border-t shadow-lg">
 
-          <div className="flex flex-col gap-5 p-6">
+
+          <nav className="flex flex-col px-6 py-6 gap-5">
+
 
             {navLinks.map((item) => (
 
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-gray-700 hover:text-blue-900 transition"
+                onClick={handleNavigation}
+                className="text-gray-700 font-medium hover:text-blue-900 transition"
               >
+
                 {item.name}
+
               </a>
 
             ))}
 
 
-          </div>
+          </nav>
+
 
         </div>
 
       )}
 
+
     </header>
+
   );
 }
