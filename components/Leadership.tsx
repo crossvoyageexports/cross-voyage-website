@@ -8,7 +8,7 @@ const leaders = [
     name: "Abhinav Bhumireddy",
     role: "Director",
     image: "/Abhinav.jpeg",
-    position: "object-[center_85%]",
+    position: "object-[center_100%]",
     description:
       "Driving the vision of Cross Voyage Exports Private Limited by building trusted global partnerships and connecting quality Indian products with international markets.",
   },
@@ -16,7 +16,7 @@ const leaders = [
     name: "Vamsi",
     role: "Director",
     image: "/vamsi.jpeg",
-    position: "object-[center_20%]",
+    position: "object-[center_0%]",
     description:
       "Supporting business operations, strategic growth, and ensuring smooth coordination across sourcing, exports, and customer relationships.",
   },
@@ -31,7 +31,7 @@ export default function Leadership() {
 
       <div className="max-w-6xl mx-auto px-6">
 
-
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,9 +55,8 @@ export default function Leadership() {
         </motion.div>
 
 
-
+        {/* Leadership Cards */}
         <div className="grid md:grid-cols-2 gap-8 mt-12">
-
 
           {leaders.map((leader, index) => (
 
@@ -70,7 +69,7 @@ export default function Leadership() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 max-w-md mx-auto w-full"
             >
 
-
+              {/* Image */}
               <div className="relative h-[360px] w-full bg-gray-100">
 
                 <Image
@@ -84,18 +83,16 @@ export default function Leadership() {
               </div>
 
 
-
+              {/* Details */}
               <div className="p-6 text-center">
 
                 <h3 className="text-2xl font-bold text-slate-900">
                   {leader.name}
                 </h3>
 
-
                 <p className="text-blue-700 font-semibold mt-1">
                   {leader.role}
                 </p>
-
 
                 <p className="mt-4 text-gray-600 leading-7 text-sm">
                   {leader.description}
@@ -103,11 +100,9 @@ export default function Leadership() {
 
               </div>
 
-
             </motion.div>
 
           ))}
-
 
         </div>
 
