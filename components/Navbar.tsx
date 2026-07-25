@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -17,11 +17,6 @@ const navLinks = [
 export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-
-  const handleNavigation = () => {
-    setMenuOpen(false);
-  };
 
 
   return (
@@ -66,7 +61,6 @@ export default function Navbar() {
 
           </div>
 
-
         </a>
 
 
@@ -84,10 +78,28 @@ export default function Navbar() {
               href={item.href}
               className="font-medium text-gray-700 hover:text-blue-900 transition"
             >
+
               {item.name}
+
             </a>
 
           ))}
+
+
+
+          {/* Instagram */}
+
+          <a
+            href="https://www.instagram.com/cross_voyage_exports/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-gray-700 hover:text-pink-600 transition"
+          >
+
+            <Instagram size={24} />
+
+          </a>
 
 
         </nav>
@@ -134,7 +146,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={handleNavigation}
+                onClick={() => setMenuOpen(false)}
                 className="text-gray-700 font-medium hover:text-blue-900 transition"
               >
 
@@ -143,6 +155,24 @@ export default function Navbar() {
               </a>
 
             ))}
+
+
+
+            {/* Instagram Mobile */}
+
+            <a
+              href="https://www.instagram.com/cross_voyage_exports/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 text-gray-700 font-medium hover:text-pink-600 transition"
+            >
+
+              <Instagram size={20} />
+
+              Instagram
+
+            </a>
 
 
           </nav>
