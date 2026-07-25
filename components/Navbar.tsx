@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Products", href: "#products" },
   { name: "Certifications", href: "#certifications" },
   { name: "Leadership", href: "#leadership" },
+  { name: "Get Quote", href: "#quote" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -21,8 +22,8 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-        {/* Logo */}
 
+        {/* Logo */}
         <a href="#" className="flex items-center gap-3">
 
           <div className="relative w-[60px] h-[60px]">
@@ -54,8 +55,8 @@ export default function Navbar() {
         </a>
 
 
-        {/* Desktop Navigation */}
 
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
 
           {navLinks.map((item) => (
@@ -71,18 +72,11 @@ export default function Navbar() {
           ))}
 
 
-          <a
-            href="#contact"
-            className="bg-blue-900 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition"
-          >
-            Get Quote
-          </a>
-
         </nav>
 
 
-        {/* Mobile Menu Button */}
 
+        {/* Mobile Button */}
         <button
           className="lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -93,6 +87,7 @@ export default function Navbar() {
 
 
       </div>
+
 
 
       {/* Mobile Menu */}
@@ -116,13 +111,6 @@ export default function Navbar() {
 
             ))}
 
-
-            <a
-              href="#contact"
-              className="bg-blue-900 text-white rounded-lg py-3 text-center"
-            >
-              Get Quote
-            </a>
 
           </div>
 
