@@ -16,7 +16,7 @@ const leaders = [
     name: "Vamsi",
     role: "Director",
     image: "/vamsi.jpeg",
-    position: "object-[center_25%]",
+    position: "object-[center_5%]",
     description:
       "Supporting business operations, strategic growth, and ensuring smooth coordination across sourcing, exports, and customer relationships.",
   },
@@ -24,10 +24,15 @@ const leaders = [
 
 export default function Leadership() {
   return (
-    <section id="leadership" className="py-24 bg-slate-50">
+    <section
+      id="leadership"
+      className="scroll-mt-24 py-16 bg-slate-50"
+    >
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
 
+
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,11 +44,13 @@ export default function Leadership() {
             Leadership
           </p>
 
-          <h2 className="text-5xl font-bold text-slate-900 mt-4">
+
+          <h2 className="text-4xl font-bold text-slate-900 mt-3">
             Driven By Vision & Trust
           </h2>
 
-          <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+
+          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
             Our leadership team combines business vision, export expertise,
             and commitment to building long-term relationships with global buyers.
           </p>
@@ -51,58 +58,70 @@ export default function Leadership() {
         </motion.div>
 
 
-        <div className="grid md:grid-cols-2 gap-10 mt-16">
+
+        {/* Leaders */}
+        <div className="grid md:grid-cols-2 gap-8 mt-12">
+
 
           {leaders.map((leader, index) => (
 
             <motion.div
               key={leader.name}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100"
+              transition={{ delay: index * 0.15 }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 max-w-md mx-auto w-full"
             >
 
-              {/* Leadership Image */}
-              <div className="relative aspect-[4/5] bg-gray-100">
+
+              {/* Image */}
+              <div className="relative h-[320px] w-full bg-gray-100">
 
                 <Image
                   src={leader.image}
                   alt={leader.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 400px"
                   className={`object-cover ${leader.position}`}
                 />
 
               </div>
 
 
-              {/* Details */}
-              <div className="p-8 text-center">
 
-                <h3 className="text-3xl font-bold text-slate-900">
+              {/* Details */}
+              <div className="p-6 text-center">
+
+
+                <h3 className="text-2xl font-bold text-slate-900">
                   {leader.name}
                 </h3>
 
-                <p className="text-blue-700 font-semibold mt-2">
+
+                <p className="text-blue-700 font-semibold mt-1">
                   {leader.role}
                 </p>
 
 
-                <p className="mt-5 text-gray-600 leading-8">
+                <p className="mt-4 text-gray-600 leading-7 text-sm">
                   {leader.description}
                 </p>
 
+
               </div>
+
 
             </motion.div>
 
           ))}
 
+
         </div>
 
+
       </div>
+
 
     </section>
   );
