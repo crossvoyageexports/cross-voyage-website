@@ -8,7 +8,7 @@ const leaders = [
     name: "Abhinav Bhumireddy",
     role: "Director",
     image: "/Abhinav.jpeg",
-    position: "object-[center_60%]",
+    position: "object-[center_70%]",
     description:
       "Driving the vision of Cross Voyage Exports Private Limited by building trusted global partnerships and connecting quality Indian products with international markets.",
   },
@@ -16,7 +16,7 @@ const leaders = [
     name: "Vamsi",
     role: "Director",
     image: "/vamsi.jpeg",
-    position: "object-[center_5%]",
+    position: "object-[center_0%]",
     description:
       "Supporting business operations, strategic growth, and ensuring smooth coordination across sourcing, exports, and customer relationships.",
   },
@@ -31,7 +31,6 @@ export default function Leadership() {
 
       <div className="max-w-6xl mx-auto px-6">
 
-
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -44,11 +43,9 @@ export default function Leadership() {
             Leadership
           </p>
 
-
           <h2 className="text-4xl font-bold text-slate-900 mt-3">
             Driven By Vision & Trust
           </h2>
-
 
           <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
             Our leadership team combines business vision, export expertise,
@@ -58,10 +55,8 @@ export default function Leadership() {
         </motion.div>
 
 
-
-        {/* Leaders */}
+        {/* Leadership Cards */}
         <div className="grid md:grid-cols-2 gap-8 mt-12">
-
 
           {leaders.map((leader, index) => (
 
@@ -74,8 +69,7 @@ export default function Leadership() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 max-w-md mx-auto w-full"
             >
 
-
-              {/* Image */}
+              {/* Profile Image */}
               <div className="relative h-[320px] w-full bg-gray-100">
 
                 <Image
@@ -89,39 +83,30 @@ export default function Leadership() {
               </div>
 
 
-
-              {/* Details */}
+              {/* Profile Details */}
               <div className="p-6 text-center">
-
 
                 <h3 className="text-2xl font-bold text-slate-900">
                   {leader.name}
                 </h3>
 
-
                 <p className="text-blue-700 font-semibold mt-1">
                   {leader.role}
                 </p>
-
 
                 <p className="mt-4 text-gray-600 leading-7 text-sm">
                   {leader.description}
                 </p>
 
-
               </div>
-
 
             </motion.div>
 
           ))}
 
-
         </div>
 
-
       </div>
-
 
     </section>
   );
